@@ -1,4 +1,4 @@
-import App.GunApplication;
+import app.GunApplication;
 
 public class Main {
     public static void main(String[] args) {

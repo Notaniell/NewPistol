@@ -1,4 +1,4 @@
-package Components;
+package components;
 
 public class Magazine {
     private final int MAX_BULLETS = 6;

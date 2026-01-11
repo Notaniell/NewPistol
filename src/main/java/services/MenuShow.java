@@ -1,4 +1,4 @@
-package Services;
+package services;
 
 public class MenuShow {
     public static void showMainMenu(){
@@ -7,10 +7,5 @@ public class MenuShow {
         System.out.println("3. Количество патронов в магазине");
         System.out.println("4. Русская рулетка");
         System.out.println("5. Выйти");
-    }
-
-    public static void showRussianRollMenu() {
-        System.out.println("1. Крутим барабан!");
-        System.out.println("2. Выстрелить!!!(\u001B[31mОПАСНО!!!\u001B[0m)");
     }
 }
