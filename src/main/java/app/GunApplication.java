@@ -23,8 +23,12 @@ public class GunApplication {
                 case 2 -> pistol.shoot(magazine);
                 case 3 -> System.out.println("\nПатронов осталось: " + magazine.getCurrentBullets());
                 case 4 -> {
-                    MenuShow.showRussianRollMenu();
-                }  // временно
+                    if(RussianRoll.resultSpinBarrel(magazine)) {
+                        pistol.shoot(magazine);
+                        continue;
+                    }
+                    System.out.println("Повезло, повезло, в каморе пусто");
+                }
                 case 5 -> {
                     RWFiles.writeToFile(magazine);
                     return;

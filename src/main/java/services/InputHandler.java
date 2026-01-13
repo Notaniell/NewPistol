@@ -1,6 +1,9 @@
 package services;
 
+import java.util.Random;
 import java.util.Scanner;
+
+import static components.Magazine.MAX_BULLETS;
 
 public class InputHandler {
 
@@ -12,5 +15,10 @@ public class InputHandler {
             return menuChoice();
         }
         return scanner.nextInt();
+    }
+
+    public static int getRandomForBarrel() {
+        Random random = new Random();
+        return random.nextInt(MAX_BULLETS);
     }
 }

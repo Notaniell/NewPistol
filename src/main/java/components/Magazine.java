@@ -1,24 +1,41 @@
 package components;
 
-public class Magazine {
-    private final int MAX_BULLETS = 6;
-    private int currentBullets = 0;
+import java.util.Arrays;
 
-//    boolean[] barrel = new boolean[MAX_BULLETS];
+public class Magazine {
+    public static final int MAX_BULLETS = 6;
+
+    private boolean[] bulletsInBarrel = new boolean[MAX_BULLETS];
 
     public int getCurrentBullets() {
-        return currentBullets;
+        int count = 0;
+        for (boolean value : this.bulletsInBarrel) {
+            if (value) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public void setCurrentBullets(int inputBullets) {
-        currentBullets = inputBullets;
-//        for (int i = 0;i < inputBullets;i++){
-//            barrel[i] = true;
-//        }
+        Arrays.fill(this.bulletsInBarrel, false); // обнуляем патроны
+        for (int i = 0;i < inputBullets  && i < MAX_BULLETS;i++) {
+            this.bulletsInBarrel[i] = true;
+        }
     }
 
     public void decreaseCurrentBullet() {
-        currentBullets--;
+        for (int i = 0;i < MAX_BULLETS;i++){
+            int b = MAX_BULLETS - 1 - i;
+
+            if (this.bulletsInBarrel[b]) {
+                this.bulletsInBarrel[b] = false;
+                return;
+            }
+        }
     }
 
+    public boolean[] getBulletsInBarrel() {
+        return this.bulletsInBarrel;
+    }
 }
