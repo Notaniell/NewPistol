@@ -1,8 +1,8 @@
-import app.GunApplication;
+import core.GunApplication;
 
 public class Main {
     public static void main(String[] args) {
-        GunApplication revolver = new GunApplication();
-        revolver.run();
+        GunApplication gunApp = new GunApplication();
+        gunApp.run();
     }
 }

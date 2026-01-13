@@ -1,6 +1,6 @@
-package app;
+package core;
 
-import components.Magazine;
+import model.Magazine;
 
 public class Pistol {
 
