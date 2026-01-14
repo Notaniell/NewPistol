@@ -1,6 +1,6 @@
 package utils;
 
-public class MenuShow {
+public class MenuShowUtil {
     public static void showMainMenu(){
         System.out.println("\n1. Зарядить патроны");
         System.out.println("2. Выстрелить");

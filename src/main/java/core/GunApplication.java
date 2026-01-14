@@ -2,18 +2,18 @@ package core;
 
 import model.Magazine;
 import utils.InputHandler;
-import utils.MenuShow;
-import utils.RWFiles;
-import utils.RussianRoll;
+import utils.MenuShowUtil;
+import utils.RWFilesUtil;
+import utils.RussianRollUtil;
 
 public class GunApplication {
     public void run(){
         Pistol pistol = new Pistol();
         Magazine magazine = new Magazine();
-        magazine.setCurrentBullets(RWFiles.readIntFromFile());
+        magazine.setCurrentBullets(RWFilesUtil.readIntFromFile());
         
         while (true) {
-            MenuShow.showMainMenu();
+            MenuShowUtil.showMainMenu();
             int choice = InputHandler.getIntInput();
 
             switch (choice) {
@@ -24,14 +24,14 @@ public class GunApplication {
                 case 2 -> pistol.shoot(magazine);
                 case 3 -> System.out.println("Патронов осталось: " + magazine.getCurrentBullets());
                 case 4 -> {
-                    if(RussianRoll.getResultSpinBarrel(magazine)) {
+                    if(RussianRollUtil.getResultSpinBarrel(magazine)) {
                         pistol.shoot(magazine);
                         continue;
                     }
                     System.out.println("Повезло, повезло, в каморе пусто");
                 }
                 case 5 -> {
-                    RWFiles.writeToFile(magazine.getCurrentBullets());
+                    RWFilesUtil.writeToFile(magazine.getCurrentBullets());
                     return;
                 }
                 default -> throw new IllegalStateException("Некорректный ввод: " + choice);

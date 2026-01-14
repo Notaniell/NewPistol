@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-public class RWFiles {
+public class RWFilesUtil {
     public static final String REMAIN_BULLETS = "RemainBullets.txt";
 
     public static int readIntFromFile() {
