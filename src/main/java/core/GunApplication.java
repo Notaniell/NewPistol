@@ -4,6 +4,7 @@ import model.Magazine;
 import utils.InputHandler;
 import utils.MenuShow;
 import utils.RWFiles;
+import utils.RussianRoll;
 
 public class GunApplication {
     public void run(){
